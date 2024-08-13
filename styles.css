@@ -22,7 +22,7 @@
     color: #b3b3b3; /* Text color */
     font-size: 16px; /* Text size */
     font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
-    text-shadow: -.5px -.5px 0 #353535, .5px -.5px 0 #353535, -.5px .5px 0 #353535, .5px .5px 0 #353535;
+    text-shadow: -.5px -.5px 0 #4e4e4e, .5px -.5px 0 #4e4e4e, -.5px .5px 0 #4e4e4e, .5px .5px 0 #4e4e4e;
     text-align: center;
     padding: 0px;
     margin: 0px;
@@ -40,25 +40,25 @@
     color: white;
     font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
     backdrop-filter: blur(5px);
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 1px;
     box-shadow: none;
     border: none;
     padding: 0px;
-    margin-left: 5px;
+    margin-left: 24px;
+    margin-top: 8px;
 }
 
 .leaflet-popup {
     background: rgba(0, 0, 0, 0);
     color: white;
-    font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
+    font-family: 'saira-semicondensed-regular', sans-serif; /* Custom font */
     backdrop-filter: blur(5px);
     font-size: 18px;
     letter-spacing: 1px;
     box-shadow: none;
     border: none;
     padding: 0px;
-    margin-left: 5px;
     cursor: url('images/icons/cursors/custom-cursor.png'), auto;
 }
 
@@ -70,5 +70,3 @@
 #map {
     cursor: url('images/icons/cursors/custom-cursor.png'), auto;
 }
-
-

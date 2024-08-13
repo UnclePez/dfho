@@ -15,6 +15,8 @@
     <div id="map"></div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="markersData.js"></script> <!-- Include the markers data file -->
+    <script src="locationsData.js"></script> <!-- Include the locations data file -->
     <script>
         // MAP SETUP --------------------------------------------------
         var map = L.map('map', {
@@ -32,36 +34,6 @@
         var image = L.imageOverlay('images/zero-dam-map.png', bounds).addTo(map);
         map.fitBounds(bounds);
         map.setZoom(-2);
-
-        // LOCATION NAMES ------------------------------------------------
-        var locationNames = [
-            {
-                coordinates: [4394, 2228],
-                text: 'Major Substation',
-                zoomLevel: -3
-            },
-            {
-                coordinates: [5428, 3114],
-                text: 'Visitor Center',
-                zoomLevel: -3
-            },
-            {
-                coordinates: [4144, 1130],
-                text: 'Administrative Area',
-                zoomLevel: -3
-            },
-            {
-                coordinates: [2661, 1823],
-                text: 'Cement Plant',
-                zoomLevel: -3
-            },
-            {
-                coordinates: [2676, 993],
-                text: 'Barracks',
-                zoomLevel: -3
-            },
-            // Add more location names here
-        ];
 
         // CREATE LOCATION NAMES -----------------------------------------
         var locationLabelLayers = [];
@@ -85,27 +57,7 @@
             });
         }
 
-        createLocationNames();
-
-        // MARKER DATA ------------------------------------------------
-        var markersData = [
-            {
-                coordinates: [1912, 1059],
-                iconUrl: 'images/icons/lootcrate_icon.png',
-                hoverText: 'HACKER COMPUTER',
-                modalText: 'This will show information about the Hacker Computer'
-            },
-            {
-                coordinates: [1125, 124],
-                iconUrl: 'images/icons/airdrop_icon.png',
-                hoverText: 'AIR DROP',
-                modalText: 'This will show information about the Air Drop'
-            },
-            // Add more markers here
-        ];
-
-        
-        
+        createLocationNames();   
 
         // CREATE ICON ------------------------------------
         function createIcon(size, iconUrl) {
@@ -113,14 +65,15 @@
                 iconUrl: iconUrl,
                 iconSize: [size, size],
                 iconAnchor: [size / 2, size / 2], // Anchor icon to its center
-                tooltipAnchor: [size / 2, 0], // Anchor tooltip to right side
+                tooltipAnchor: [size / 2, 1], // Anchor tooltip to right side
+                popupAnchor: [0, (-size / 2)]
             });
         }
 
         // CREATE MARKERS ---------------------------------------------
         var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         var markers = [];
-        globalIconSize = 40;
+        globalIconSize = 32;
 
         function createMarkers() {
             markersData.forEach(function(markerData) {
@@ -132,10 +85,10 @@
                 }).addTo(map);
                 
                 // displays text next to icon when hovering
-                marker.bindTooltip(markerData.hoverText, {direction: 'right'});
+                marker.bindTooltip(markerData.tooltipText, {direction: 'right', sticky: true});
 
                 // Bind a popup to the marker
-                marker.bindPopup(markerData.modalText, {autoPan: false, autoClose: false, closeOnClick: false, closeButton: false});
+                marker.bindPopup(markerData.popupText, {autoPan: false, autoClose: false, closeOnClick: false, closeButton: false});
 
                 markers.push(marker);
 
@@ -205,7 +158,7 @@
         }
 
         // MARKER SIZE ADJUSTMENTS --------------------------------------
-        // Change icon sizes dynamically with zoom level
+        // Change icon sizes dynamically with zoom level 
         function updateMarkerSize() {
             var zoom = map.getZoom() - 2;
             var newSize = Math.max(globalIconSize / 2, globalIconSize * Math.pow(2, zoom - map.getMinZoom()));
