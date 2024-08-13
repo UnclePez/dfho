@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'saira-semicondensed-regular'; /* Name your font family */
+    src: url('fonts/SairaSemiCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'plasma-bold'; /* Name your font family */
+    src: url('fonts/Fontspring-DEMO-plasma-bold.otf');
+}
+
+@font-face {
+    font-family: 'plasma-bold-condensed'; /* Name your font family */
+    src: url('fonts/Fontspring-DEMO-plasma-boldcondensed.otf');
+}
+@font-face {
+    font-family: 'plasma-demibold-condensed'; /* Name your font family */
+    src: url('fonts/Fontspring-DEMO-plasma-demiboldcondensed.otf');
+}
+
+.location-label {
+    background: none;
+    border: none;
+    color: #b3b3b3; /* Text color */
+    font-size: 16px; /* Text size */
+    font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
+    text-shadow: -.5px -.5px 0 #353535, .5px -.5px 0 #353535, -.5px .5px 0 #353535, .5px .5px 0 #353535;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    cursor: url('images/icons/cursors/custom-cursor.png'), default !important;
+}
+
+.leaflet-marker-icon {
+    transform: scale(1); /* Initial scale */
+    transform-origin: center center; /* Center scaling */
+    cursor: url('images/icons/cursors/custom-cursor-2.png'), auto;
+}
+
+.leaflet-tooltip {
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
+    backdrop-filter: blur(5px);
+    font-size: 18px;
+    letter-spacing: 1px;
+    box-shadow: none;
+    border: none;
+    padding: 0px;
+    margin-left: 5px;
+}
+
+.leaflet-popup {
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
+    backdrop-filter: blur(5px);
+    font-size: 18px;
+    letter-spacing: 1px;
+    box-shadow: none;
+    border: none;
+    padding: 0px;
+    margin-left: 5px;
+    cursor: url('images/icons/cursors/custom-cursor.png'), auto;
+}
+
+.leaflet-tooltip:before {
+    display: none; /* Hide the arrow */
+}
+
+/* Custom cursor */
+#map {
+    cursor: url('images/icons/cursors/custom-cursor.png'), auto;
+}
+
+

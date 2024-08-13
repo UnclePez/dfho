@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Force - Interactive Maps</title>
+    <link rel="icon" href="images/icons/df_icon.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        #map { height: 100vh; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // MAP SETUP --------------------------------------------------
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -3,
+            maxZoom: 2,
+            zoomDelta: 0.5,
+            zoomSnap: 0.5,
+            doubleClickZoom: false,
+            wheelPxPerZoomLevel: 200,
+            zoomAnimation: false,
+            attributionControl: false
+        });
+        var bounds = [[0,0], [4302, 7648]];
+        var image = L.imageOverlay('images/zero-dam-map.png', bounds).addTo(map);
+        map.fitBounds(bounds);
+        map.setZoom(-2);
+
+        // LOCATION NAMES ------------------------------------------------
+        var locationNames = [
+            {
+                coordinates: [4394, 2228],
+                text: 'Major Substation',
+                zoomLevel: -3
+            },
+            {
+                coordinates: [5428, 3114],
+                text: 'Visitor Center',
+                zoomLevel: -3
+            },
+            {
+                coordinates: [4144, 1130],
+                text: 'Administrative Area',
+                zoomLevel: -3
+            },
+            {
+                coordinates: [2661, 1823],
+                text: 'Cement Plant',
+                zoomLevel: -3
+            },
+            {
+                coordinates: [2676, 993],
+                text: 'Barracks',
+                zoomLevel: -3
+            },
+            // Add more location names here
+        ];
+
+        // CREATE LOCATION NAMES -----------------------------------------
+        var locationLabelLayers = [];
+
+        function createLocationNames() {
+            locationNames.forEach(function(location) {
+                var adjustedCoordinates = [bounds[1][0] - location.coordinates[1], location.coordinates[0]];
+
+                var label = L.marker(adjustedCoordinates, {
+                    icon: L.divIcon({
+                        className: 'location-label',
+                        html: location.text,
+                        iconSize: [150, 40], // Adjust size as needed
+                        iconAnchor: [75, 20], // Center the text
+                    }),
+                    zoomLevel: location.zoomLevel
+                });
+
+                label.addTo(map);
+                locationLabelLayers.push(label);
+            });
+        }
+
+        createLocationNames();
+
+        // MARKER DATA ------------------------------------------------
+        var markersData = [
+            {
+                coordinates: [1912, 1059],
+                iconUrl: 'images/icons/lootcrate_icon.png',
+                hoverText: 'HACKER COMPUTER',
+                modalText: 'This will show information about the Hacker Computer'
+            },
+            {
+                coordinates: [1125, 124],
+                iconUrl: 'images/icons/airdrop_icon.png',
+                hoverText: 'AIR DROP',
+                modalText: 'This will show information about the Air Drop'
+            },
+            // Add more markers here
+        ];
+
+        
+        
+
+        // CREATE ICON ------------------------------------
+        function createIcon(size, iconUrl) {
+            return L.icon({
+                iconUrl: iconUrl,
+                iconSize: [size, size],
+                iconAnchor: [size / 2, size / 2], // Anchor icon to its center
+                tooltipAnchor: [size / 2, 0], // Anchor tooltip to right side
+            });
+        }
+
+        // CREATE MARKERS ---------------------------------------------
+        var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        var markers = [];
+        globalIconSize = 40;
+
+        function createMarkers() {
+            markersData.forEach(function(markerData) {
+                var adjustedcoordinates = [bounds[1][0] - markerData.coordinates[1], markerData.coordinates[0]];
+
+                var marker = L.marker(adjustedcoordinates, {
+                    icon: createIcon(globalIconSize, markerData.iconUrl),
+                    zIndexOffset: 1000 // makes markers appear above everything else
+                }).addTo(map);
+                
+                // displays text next to icon when hovering
+                marker.bindTooltip(markerData.hoverText, {direction: 'right'});
+
+                // Bind a popup to the marker
+                marker.bindPopup(markerData.modalText, {autoPan: false, autoClose: false, closeOnClick: false, closeButton: false});
+
+                markers.push(marker);
+
+                if (isTouchDevice) { // Handle touch devices
+
+                    // Toggle tooltips and popups
+                    var tooltipFirstOpen = false;
+                    marker.on('click', function(event) {
+                        if (isTooltipOpen()) {
+                            marker.closeTooltip();
+                            marker.closePopup();
+                        } else {
+                            marker.openTooltip();
+                            marker.openPopup();
+                        }
+                    });
+                    // If user taps away from icons, all popups/tooltips will close
+                    map.on('click', function(event) {
+                        marker.closePopup();
+                        marker.closeTooltip();
+                    });
+
+                } else { // Desktop devices
+                    // When hovering, open tooltip and increase icon size
+                    marker.on('mouseover', function() {
+                        var newIcon = createIcon(Math.round(marker.options.icon.options.iconSize[0] * 1.3), marker.options.icon.options.iconUrl);
+                        marker.setIcon(newIcon);
+                        marker.openTooltip();
+                    });
+
+                    // When mouse leaves, revert icon size
+                    marker.on('mouseout', function() {
+                        var newIcon = createIcon(Math.round(marker.options.icon.options.iconSize[0] / 1.3), marker.options.icon.options.iconUrl);
+                        marker.setIcon(newIcon);
+                    });
+
+                    // When icon is clicked, toggle popup
+                    marker.on('click', function() {
+                        if (isPopupOpen()) {
+                            marker.closePopup();
+                        } else {
+                            marker.openPopup();
+                        }
+                    });
+
+                    // If user clicks away from icons, all popups will close
+                    map.on('click', function(event) {
+                        marker.closePopup();
+                    });
+                }
+            });
+        }
+
+        createMarkers();
+
+        // UPDATE LABEL VISIBILITY ---------------------------------------
+        // Allows for dynamic labels depending on zoom level
+        function updateLabelVisibility() {
+            var currentZoom = map.getZoom();
+            locationLabelLayers.forEach(function(label) {
+                if (currentZoom >= label.options.zoomLevel) {
+                    map.addLayer(label);
+                } else {
+                    map.removeLayer(label);
+                }
+            });
+        }
+
+        // MARKER SIZE ADJUSTMENTS --------------------------------------
+        // Change icon sizes dynamically with zoom level
+        function updateMarkerSize() {
+            var zoom = map.getZoom() - 2;
+            var newSize = Math.max(globalIconSize / 2, globalIconSize * Math.pow(2, zoom - map.getMinZoom()));
+            
+            markers.forEach(function(marker) {
+                var iconUrl = marker.options.icon.options.iconUrl;
+                var newIcon = createIcon(newSize, iconUrl);
+                marker.setIcon(newIcon);
+            });
+        }
+
+        // Combined function to handle zoom changes
+        function onZoomChange() {
+            updateMarkerSize();
+            updateLabelVisibility();
+        }
+
+        // When map zoom is changed, update icons and labels
+        map.on('zoomend', onZoomChange);
+        onZoomChange(); // Call once initially to set up everything correctly
+
+    </script>
+</body>
+</html>
