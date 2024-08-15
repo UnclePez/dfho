@@ -3,7 +3,7 @@ const markersData = [
     {
         category: 'Hacker Computer', // For marker toggle functionality. Should be a category in categoriesData.js
         coordinates: [2600, 1910], // Raw pixel coordinates found by hovering over map image in programs like Gimp or Photoshop
-        iconUrl: 'images/icons/hacker-computer-icon.png', // Path to the desired marker icon
+        iconUrl: 'images/icons/containers/hacker-computer-icon.png', // Path to the desired marker icon
         tooltipText: 'HACKER COMPUTER', // The text that will appear next to the mouse when hovering over the icon
         popupText: 'This will show information about the Hacker Computer', // Text in popup. WIP
         height: 'up', // 'up' adds an upwards chevron icon to the tooltip indicating the marker location is above ground level. 'down' is below ground level. Any other value will not add an icon
@@ -12,7 +12,7 @@ const markersData = [
     {
         category: 'Hacker Computer',
         coordinates: [3932, 1188],
-        iconUrl: 'images/icons/hacker-computer-icon.png',
+        iconUrl: 'images/icons/containers/hacker-computer-icon.png',
         tooltipText: 'HACKER COMPUTER',
         popupText: 'This will show information about the Hacker Computer',
         height: 'up',
@@ -21,11 +21,11 @@ const markersData = [
     {
         category: 'Safe',
         coordinates: [4262, 1227],
-        iconUrl: 'images/icons/safe-icon.png',
+        iconUrl: 'images/icons/containers/safe-icon.png',
         tooltipText: 'SAFE',
         popupText: 'This will show information about the Safe',
         height: 'up',
-        locked: true,
+        locked: false,
     },
     {
         category: 'Saeed',
@@ -33,8 +33,8 @@ const markersData = [
         iconUrl: 'images/icons/boss-icon.png',
         tooltipText: 'GUARD CAPTAIN SAEED',
         popupText: 'This will show information about the Boss',
-        height: 'down',
-        locked: true,
+        height: 'up',
+        locked: false,
     },
     {
         category: 'Industrial Elevator',
@@ -43,7 +43,7 @@ const markersData = [
         tooltipText: 'INDUSTRIAL ELEVATOR EXTRACT',
         popupText: 'This will show information about the Industrial Elevator Extract',
         height: '',
-        locked: true,
+        locked: false,
     },
     {
         category: 'Industrial Elevator',
@@ -66,7 +66,7 @@ const markersData = [
     {
         category: 'Safe',
         coordinates: [4304, 2446],
-        iconUrl: 'images/icons/safe-icon.png',
+        iconUrl: 'images/icons/containers/safe-icon.png',
         tooltipText: 'SAFE',
         popupText: 'This will show information about the Safe',
         height: 'up',

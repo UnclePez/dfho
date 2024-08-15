@@ -152,6 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle toggling bottom toolbar with button
     const bottomToolbar = document.getElementById('bottom-toolbar');
     const openToolbarBtn = document.getElementById('openToolbarBtn');
+    bottomToolbar.classList.toggle('collapsed'); // Close by default
     openToolbarBtn.addEventListener('click', () => {
         bottomToolbar.classList.toggle('collapsed');
     });
