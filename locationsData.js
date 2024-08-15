@@ -1,5 +1,5 @@
 // LOCATION NAMES ------------------------------------------------
-var locationNames = [
+var locationsData = [
     {
         coordinates: [4394, 2228], // find coordinates in Gimp, make sure map dimensions are the same
         text: 'Major Substation', // Label text
