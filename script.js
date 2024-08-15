@@ -220,12 +220,6 @@ function createIcon(size, iconUrl) {
 }
 
 // Define layers for categories
-//categoriesData.forEach(({ checkboxId
-//    checkboxId: L.layerGroup().addTo(map)
-//}));
-
-// make this efficient
-
 var categoryLayers = {
     'Safe': L.layerGroup().addTo(map),
     'Hacker Computer': L.layerGroup().addTo(map),
