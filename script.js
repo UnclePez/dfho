@@ -279,10 +279,34 @@ function createMarkers() {
             console.warn(`Category "${category}" not found.`);
         }
         
-        // displays text next to icon when hovering
-        marker.bindTooltip(markerData.tooltipText, {direction: 'right', sticky: true});
+        // Add icons to tooltips depending on marker properties
+        function createTooltipHtml(markerData) {
+            const iconSize = '18px'; // change icon size here
+            const iconHtml = {
+                up: `<img src="images/icons/white-up-icon.png" style="width: ${iconSize}; height: ${iconSize};" />`,
+                down: `<img src="images/icons/white-down-icon.png" style="width: ${iconSize}; height: ${iconSize};" />`,
+                locked: `<img src="images/icons/white-locked-point-icon.png" style="width: ${iconSize}; height: ${iconSize};" />`
+            };
+        
+            let iconsHtml = '';
+            
+            if (markerData.height === 'up') {iconsHtml += iconHtml.up;} else if (markerData.height === 'down') {iconsHtml += iconHtml.down;}
+        
+            if (markerData.locked) {iconsHtml += iconHtml.locked;}
 
-        // Bind a popup to the marker
+            return `
+                <div style="display: flex; align-items: center;">
+                    ${iconsHtml}
+                    <span style="margin-left: 4px;">${markerData.tooltipText}</span>
+                </div>
+            `;
+        }
+        const tooltipHtml = createTooltipHtml(markerData);
+
+        // Bind tooltip (with adjusted html) to the marker
+        marker.bindTooltip(tooltipHtml, {direction: 'right', sticky: true});
+
+        // Bind popup to the marker
         marker.bindPopup(markerData.popupText, {autoPan: false, autoClose: false, closeOnClick: false, closeButton: false});
 
         markers.push(marker);
