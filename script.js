@@ -149,9 +149,9 @@ function initializeLayerControls(controlMappings) {
 // BOTTOM TOOLBAR  ---------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Handle toggling bottom toolbar with button
-    const bottomToolbar = document.getElementById('bottom-toolbar');
-    const openToolbarBtn = document.getElementById('openToolbarBtn');
+    // Handle toggling left toolbar with button
+    const bottomToolbar = document.getElementById('left-toolbar');
+    const openToolbarBtn = document.getElementById('openLeftToolbarBtn');
     bottomToolbar.classList.toggle('collapsed'); // Close by default
     openToolbarBtn.addEventListener('click', () => {
         bottomToolbar.classList.toggle('collapsed');
@@ -233,7 +233,7 @@ var categoryLayers = {
 };
 
 // CREATE MARKERS ---------------------------------------------
-var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+//var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 var markers = [];
 globalIconSize = 32;
 
@@ -305,60 +305,25 @@ function createMarkers() {
         const tooltipHtml = createTooltipHtml(markerData);
 
         // Bind tooltip (with adjusted html) to the marker
-        marker.bindTooltip(tooltipHtml, {direction: 'right', sticky: true});
+        marker.bindTooltip(tooltipHtml, {direction: 'right'});
 
         // Bind popup to the marker
-        marker.bindPopup(markerData.popupText, {autoPan: false, autoClose: false, closeOnClick: false, closeButton: false});
+        marker.bindPopup(markerData.popupText, {autoPan: false, closeButton: false});
 
         markers.push(marker);
 
-        if (isTouchDevice) { // Handle touch devices
+        // When hovering, open tooltip and increase icon size
+        marker.on('mouseover', function() {
+            var newIcon = createIcon(Math.round(marker.options.icon.options.iconSize[0] * 1.3), marker.options.icon.options.iconUrl);
+            marker.setIcon(newIcon);
+            marker.openTooltip();
+        });
 
-            // Toggle tooltips and popups
-            var tooltipFirstOpen = false;
-            marker.on('click', function(event) {
-                if (isTooltipOpen()) {
-                    marker.closeTooltip();
-                    marker.closePopup();
-                } else {
-                    marker.openTooltip();
-                    marker.openPopup();
-                }
-            });
-            // If user taps away from icons, all popups/tooltips will close
-            map.on('click', function(event) {
-                marker.closePopup();
-                marker.closeTooltip();
-            });
-
-        } else { // Desktop devices
-            // When hovering, open tooltip and increase icon size
-            marker.on('mouseover', function() {
-                var newIcon = createIcon(Math.round(marker.options.icon.options.iconSize[0] * 1.3), marker.options.icon.options.iconUrl);
-                marker.setIcon(newIcon);
-                marker.openTooltip();
-            });
-
-            // When mouse leaves, revert icon size
-            marker.on('mouseout', function() {
-                var newIcon = createIcon(Math.round(marker.options.icon.options.iconSize[0] / 1.3), marker.options.icon.options.iconUrl);
-                marker.setIcon(newIcon);
-            });
-
-            // When icon is clicked, toggle popup
-            marker.on('click', function() {
-                if (isPopupOpen()) {
-                    marker.closePopup();
-                } else {
-                    marker.openPopup();
-                }
-            });
-
-            // If user clicks away from icons, all popups will close
-            map.on('click', function(event) {
-                marker.closePopup();
-            });
-        }
+        // When mouse leaves, revert icon size
+        marker.on('mouseout', function() {
+            var newIcon = createIcon(Math.round(marker.options.icon.options.iconSize[0] / 1.3), marker.options.icon.options.iconUrl);
+            marker.setIcon(newIcon);
+        });
     });
 }
 
@@ -387,7 +352,9 @@ function updateMarkerSize() {
     markers.forEach(function(marker) {
         var iconUrl = marker.options.icon.options.iconUrl;
         var newIcon = createIcon(newSize, iconUrl);
-        marker.setIcon(newIcon);
+        if (map.getZoom() <= 0) { // When zooming in past zoom level 0, icons don't get larger. This is so they don't overlap and to make it easier to see in-game position.
+            marker.setIcon(newIcon);
+        }
     });
 }
 

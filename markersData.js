@@ -12,7 +12,7 @@ const markersData = [
     {
         category: 'Hacker Computer',
         coordinates: [3932, 1188],
-        iconUrl: 'images/icons/containers/hacker-computer-icon.png',
+        iconUrl: 'images/icons/containers/courier-carton-icon.png',
         tooltipText: 'HACKER COMPUTER',
         popupText: 'This will show information about the Hacker Computer',
         height: 'up',
