@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Delta Force Interactive Maps</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive maps for Delta Force: Hazard Operations. Explore extracts, loot locations, bird nests, easter eggs, and more."/>
+    <meta name="keyword" content="Delta Force Interactive Map, Hazard Operations, Zero Dam, Layali Grove, Space City, Brakkesh, Valkyr, Rattlesnake, DFHO Map, Delta Force Loot Map, Delta Force Easter Eggs, Delta Force Puzzles">
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    <link rel="canonical" href="https://deltaforcemaps.com"/>
+    <meta property="og:url" content="https://deltaforcemaps.com"/>
+    <meta property="og:title" content="Delta Force Interactive Maps"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Interactive maps for Delta Force: Hazard Operations. Explore extracts, loot locations, bird nests, easter eggs, and more."/>
+    <meta property="og:image" content=""/> <!-- add page preview image here -->
+
+    <link rel="icon" href="../images/icons/df-icon.ico">
+    <link rel="stylesheet" href="../../leaflet/leaflet.css" />
+    <link rel="stylesheet" href="../../styles.css" />
+
+    <style>
+        .fixed-box {
+            position: fixed;
+            bottom: 20px;
+            left: 20px; 
+            background-color: black;
+            color: white;
+            padding: 15px;
+            width: 250px; 
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
+            z-index: 1000;
+        }
+
+        .fixed-box h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+
+        .fixed-box p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-50J5M26YZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-50J5M26YZP');
+</script>
+
+<body>
+    <div class="home-background-image"></div>
+
+    <div id="main-content" class="main-content">
+        <div id="map"></div>
+    </div>
+
+    <div class="fixed-box">
+        <h3>WORK IN PROGRESS</h3>
+        <p>This site is currently under construction, but feel free to take a look around! Check back regularly to see progress as new data and features are added.</p><br>
+        <p>Questions or suggestions? Message unclepez on Discord</p>
+    </div>
+
+    <script>
+        // Custom Parallax
+        document.addEventListener('mousemove', function(e) {
+            const background = document.querySelector('.home-background-image');
+            const moveX = ((e.clientX / window.innerWidth) - 0.5) * 20;
+            const moveY = ((e.clientY / window.innerHeight) - 0.5) * 20;
+            
+            background.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+        });
+    </script>
+
+    <script src="../leaflet/leaflet.js"></script>
+    <script src="homeMarkersData.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

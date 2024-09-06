@@ -1,84 +1,105 @@
 @font-face {
-    font-family: 'saira-semicondensed-regular'; /* Name your font family */
+    font-family: 'saira-semicondensed-regular';
     src: url('fonts/SairaSemiCondensed-Regular.ttf');
 }
 @font-face {
-    font-family: 'plasma-bold'; /* Name your font family */
+    font-family: 'plasma-bold';
     src: url('fonts/Fontspring-DEMO-plasma-bold.otf');
 }
 
 @font-face {
-    font-family: 'plasma-bold-condensed'; /* Name your font family */
+    font-family: 'plasma-bold-condensed';
     src: url('fonts/Fontspring-DEMO-plasma-boldcondensed.otf');
 }
 @font-face {
-    font-family: 'plasma-demibold-condensed'; /* Name your font family */
+    font-family: 'plasma-demibold-condensed';
     src: url('fonts/Fontspring-DEMO-plasma-demiboldcondensed.otf');
 }
 
-body {
+body, html {
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    height: 100%;
     position: relative;
     overflow: hidden;
+    font-family: Arial, sans-serif;
 }
+
+.home-background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 110%;
+    background: url('../images/home-map2.webp') no-repeat center center;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: transform 0.1s ease-out;
+}
+
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../images/background.webp') no-repeat center center;
+    background-size: cover;
+}
+
+#map { height: 100vh; width: 100vw; }
 
 .main-content {
     padding: 0px;
 }
 
-/* Container for sidebar and button */
 .left-toolbar-container {
-    position: fixed; /* Fixed position to stay at the left side of the viewport */
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     display: flex;
-    z-index: 1000; /* Ensure it appears above other content */
+    z-index: 1000;
 }
 
-/* Left toolbar styles */
 .left-toolbar {
-    width: 250px;
+    width: 300px;
     height: 100%;
     background-color: #070707f5;
     backdrop-filter: blur(2px);
     color: white;
     overflow: hidden;
-    transition: width 0.3s ease; /* Smooth transition for vertical collapse */
+    transition: width 0.3s ease;
+    cursor: url('images/icons/cursors/custom-cursor.png'), default;
 }
 
-/* left toolbar content styles */
 .left-toolbar-content {
     display: block;
     padding: 15px;
+    width: 300px;
 }
 
-/* left toolbar collapsed state */
 .left-toolbar.collapsed {
-    width: 0; /* Collapse width to zero */
-    overflow: hidden; /* Hide overflow when collapsed */
+    width: 0;
+    overflow: hidden;
 }
 
-/* Toggle button to open the left toolbar */
 .open-left-toolbar-btn {
     background-color: rgba(26, 31, 29, 0.692);
     border: 1px solid rgb(59, 112, 89) !important;
     backdrop-filter: blur(2px);
-    font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
     color: rgb(26, 213, 132);
     border: none;
     cursor: pointer;
     font-size: 18px;
     padding: 2px;
-    height: 100%; /* button spans the height of the container */
+    height: 100%;
     transition: background-color 0.3s ease, border 0.3s ease;
+    cursor: url('images/icons/cursors/custom-cursor-2.png'), auto;
 }
 
-/* style when hovering button */
 .open-left-toolbar-btn:hover {
     background-color: rgba(35, 48, 42, 0.692);
-    border: 1px solid rgb(24, 215, 134) !important; /* Add green outline */
+    border: 1px solid rgb(24, 215, 134) !important;
     color: rgb(29, 236, 147);
 }
 
@@ -86,9 +107,9 @@ body {
 .location-label {
     background: none;
     border: none;
-    color: #b3b3b3; /* Text color */
-    font-size: 16px; /* Text size */
-    font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
+    color: #b3b3b3;
+    font-size: 16px;
+    font-family: 'plasma-demibold-condensed', sans-serif;
     text-shadow: -.5px -.5px 0 #4e4e4e, .5px -.5px 0 #4e4e4e, -.5px .5px 0 #4e4e4e, .5px .5px 0 #4e4e4e;
     text-align: center;
     padding: 0px;
@@ -97,15 +118,15 @@ body {
 }
 
 .leaflet-marker-icon {
-    transform: scale(1); /* Initial scale */
-    transform-origin: center center; /* Center scaling */
+    transform: scale(1);
+    transform-origin: center center;
     cursor: url('images/icons/cursors/custom-cursor-2.png'), auto;
 }
 
 .leaflet-tooltip {
     background: rgba(0, 0, 0, 0);
     color: white;
-    font-family: 'plasma-demibold-condensed', sans-serif; /* Custom font */
+    font-family: 'plasma-demibold-condensed', sans-serif;
     backdrop-filter: blur(5px);
     font-size: 16px;
     letter-spacing: 1px;
@@ -118,7 +139,7 @@ body {
 .leaflet-popup {
     background: rgba(0, 0, 0, 0);
     color: white;
-    font-family: 'saira-semicondensed-regular', sans-serif; /* Custom font */
+    font-family: 'saira-semicondensed-regular', sans-serif;
     backdrop-filter: blur(5px);
     font-size: 18px;
     letter-spacing: 1px;
@@ -129,19 +150,72 @@ body {
 }
 
 .leaflet-tooltip:before {
-    display: none; /* Hide the arrow */
+    display: none;
 }
 
-/* Custom cursor */
+.home-tooltip {
+    color: rgb(216, 216, 216);
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(1px);
+    font-family: 'plasma-bold-condensed', sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin: 0px;
+    padding-left: 5px;
+
+}
+
+.home-tooltip-hover {
+    color: white;
+    border-radius: 10px;
+    font-family: 'plasma-bold-condensed', sans-serif;
+}
+
 #map {
     cursor: url('images/icons/cursors/custom-cursor.png'), auto;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
+.map-drop-btn {
+    background-color: #161616;
+    border: 1px solid rgb(53, 53, 53);
+    color: white;
+    font-family: 'saira-semicondensed-regular', sans-serif;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .map-drop-btn:hover {
+    background-color: rgba(44, 44, 44, 0.692);
+  }
+  
+  .map-dropdown {
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgb(53, 53, 53);
+  }
+  
+  .map-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .map-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .map-dropdown-content a:hover {background-color: #ddd;}
+  
+  .show {display:block;}
 
-
-
-/* SWITCHES */
 .switch {
     position: relative;
     display: inline-block;
@@ -149,15 +223,13 @@ body {
     height: 30px;
     margin: 10px;
 }
-  
-/* Hide default HTML checkbox */
+
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
-  
-/* The slider */
+
 .slider {
     position: absolute;
     cursor: pointer;
@@ -170,9 +242,9 @@ body {
     -webkit-transition: .4s;
     transition: background-color 0.0s ease, border 0.0s ease;
     border-radius: 1px;
+    cursor: url('images/icons/cursors/custom-cursor-2.png'), auto;
 }
-  
-/* Toggle switch */
+
 .slider-toggle {
     position: absolute;
     content: "";
@@ -189,7 +261,6 @@ body {
     justify-content: center;
 }
 
-/* Psuedo element for dash decal*/
 .slider-toggle::before {
     content: "";
     height: 1px;

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zero Dam - Delta Force Interactive Maps</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive maps for Delta Force: Hazard Operations. Explore extracts, loot locations, bird nests, easter eggs, and more."/>
+    <meta name="keyword" content="Delta Force Interactive Map, Hazard Operations, Zero Dam, Layali Grove, Space City, Brakkesh, Valkyr, Rattlesnake, DFHO Map, Delta Force Loot Map, Delta Force Easter Eggs, Delta Force Puzzles">
+    <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+    <link rel="canonical" href="https://deltaforcemaps.com"/>
+    <meta property="og:url" content="https://deltaforcemaps.com"/>
+    <meta property="og:title" content="Delta Force Interactive Maps"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="Interactive maps for Delta Force: Hazard Operations. Explore extracts, loot locations, bird nests, easter eggs, and more."/>
+
+    <link rel="icon" href="../images/icons/df-icon.ico">
+    <link rel="stylesheet" href="../../leaflet/leaflet.css" />
+    <link rel="stylesheet" href="../../styles.css" />
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-50J5M26YZP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-50J5M26YZP');
+</script>
+
+<body>
+    <div class="background-image"></div>
+
+    <div id="leftToolbarContainer" class="left-toolbar-container">
+        <div id="leftToolbar" class="left-toolbar">
+            <div class="left-toolbar-content">
+
+                <div style="display: flex; align-items: center;">
+                    <a href="../Home"><img src="../images/icons/home-icon.png" style="width:30px; height:30px; padding-right: 10px; padding-top: 2px;"></a>
+                    <div class="map-dropdown">
+                        <button onclick="toggleMapDropdown()" class="map-drop-btn">ZERO DAM ▼</button>
+                        <div id="mapDropdown" class="map-dropdown-content">
+                            <a href="../LayaliGrove/">LAYALI GROVE</a>
+                            <a href="../SpaceCity/">SPACE CITY</a>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Marker Controls (WIP)</h2>
+                <label class="switch"><input type="checkbox" id="allGroups"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="containerGroup"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="extractGroup"><div class="slider"><div class="slider-toggle"></div></div></label>
+                
+                <label class="switch"><input type="checkbox" id="safe"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="hackerComputer"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="saeed"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="paidExtract"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="industrialElevator"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="randomExtract"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="conditionalExtract"><div class="slider"><div class="slider-toggle"></div></div></label>
+                <label class="switch"><input type="checkbox" id="normalExtract"><div class="slider"><div class="slider-toggle"></div></div></label>
+            </div>
+        </div>
+        <button id="openLeftToolbarBtn" class="open-left-toolbar-btn">☰</button>
+    </div>
+
+    <div id="main-content" class="main-content">
+        <div id="map"></div>
+    </div>
+
+    <script src="../leaflet/leaflet.js"></script>
+    <script src="zeroDamMarkersData.js"></script>
+    <script src="zeroDamLocationsData.js"></script>
+    <script src="zeroDamCategoriesData.js"></script>
+    <script src="zeroDam.js"></script>
+</body>
+</html>
