@@ -1,8 +1,8 @@
 
 
 var groups = {
-    'allGroups': [categoriesData[0], categoriesData[1], categoriesData[2], categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7]],
-    'containerGroup': [categoriesData[0], categoriesData[1]],
+    'allGroups': [categoriesData[0], categoriesData[1], categoriesData[2], categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], categoriesData[28]],
+    'containerGroup': [categoriesData[0], categoriesData[1], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], categoriesData[28]], 
     'extractGroup': [categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7]]
 }
 
@@ -204,6 +204,35 @@ var image = L.imageOverlay('../images/zeroDamHD.webp', bounds).addTo(map);
 map.fitBounds(bounds);
 map.setZoom(-2);
 
+/*
+// TEMP FUNCTIONS FOR MARKER PLACEMENT
+map.on('click', function(e) {
+    
+    // Get the clicked coordinates (Leaflet latLng)
+    var latLng = e.latlng;
+
+    // In GIMP, 0,0 is at the top-left, and the coordinates increase downward.
+    // We need to adjust the Y-coordinate for the GIMP system.
+    var invertedY = bounds[1][0] - latLng.lat;
+
+    // Format the coordinates in the GIMP style [X, Y] with whole numbers (no decimals)
+    var coordinates = `${Math.round(latLng.lng)}, ${Math.round(invertedY)}`;
+
+    // Copy the coordinates to the clipboard
+    copyToClipboard(coordinates);
+});
+
+// Function to copy the coordinates to clipboard
+function copyToClipboard(text) {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+}*/
+
+
 // CREATE LOCATION NAMES -----------------------------------------
 var locationLabelLayers = [];
 
@@ -242,13 +271,34 @@ function createIcon(size, iconUrl) {
 // Define layers for categories
 var categoryLayers = {
     'Safe': L.layerGroup().addTo(map),
-    'Hacker Computer': L.layerGroup().addTo(map),
+    'Computer': L.layerGroup().addTo(map),
     'Saeed': L.layerGroup().addTo(map), 
     'Paid Extract': L.layerGroup().addTo(map),
     'Industrial Elevator': L.layerGroup().addTo(map), 
     'Random Extract': L.layerGroup().addTo(map), 
     'Conditional Extract': L.layerGroup().addTo(map), 
     'Normal Extract': L.layerGroup().addTo(map),
+    'Travel Bag': L.layerGroup().addTo(map),
+    'Small Safebox': L.layerGroup().addTo(map),
+    'Computer Case': L.layerGroup().addTo(map),
+    'LG Weapon Crate': L.layerGroup().addTo(map),
+    'Ammo Crate': L.layerGroup().addTo(map),
+    'Tool Cabinet': L.layerGroup().addTo(map),
+    'LG Tool Box': L.layerGroup().addTo(map),
+    'Lab Coat': L.layerGroup().addTo(map),
+    'Clothing': L.layerGroup().addTo(map),
+    'Military Medkit': L.layerGroup().addTo(map),
+    'Medical Pile': L.layerGroup().addTo(map),
+    'Briefcase': L.layerGroup().addTo(map),
+    'Premium Storage': L.layerGroup().addTo(map),
+    'Drawers': L.layerGroup().addTo(map),
+    'Courier Carton': L.layerGroup().addTo(map),
+    'Flight Case': L.layerGroup().addTo(map),
+    'Dumpster': L.layerGroup().addTo(map),
+    'Field Supply': L.layerGroup().addTo(map),
+    'Bird Nest': L.layerGroup().addTo(map),
+    'Stash': L.layerGroup().addTo(map),
+    'Suitcase': L.layerGroup().addTo(map),
 };
 
 // CREATE MARKERS ---------------------------------------------
@@ -260,9 +310,9 @@ var dashedLineLayer = L.layerGroup().addTo(map);
 
 function createDashedLines() {
     // Define coordinates for the dashed line
-    var point1 = [4695, 685];
-    var point2 = [3952, 1100];
-    var point3 = [4660, 1990];
+    var point1 = [2971, 946];
+    var point2 = [2530, 1187];
+    var point3 = [2953, 1723];
 
     var point1Coords = [bounds[1][0] - point1[1], point1[0]];
     var point2Coords = [bounds[1][0] - point2[1], point2[0]];
@@ -319,7 +369,7 @@ function createMarkers() {
                     ${iconsHtml}
                     <span style="margin-left: 4px;">${markerData.tooltipText}</span>
                 </div>
-            `;
+            `;//Change back to this for troubleshooting: <span style="margin-left: 4px; font-family: Arial;">${markerData.tooltipText + " [" + markerData.coordinates + "]"}</span>
         }
         const tooltipHtml = createTooltipHtml(markerData);
 

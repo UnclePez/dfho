@@ -62,7 +62,7 @@ body, html {
 }
 
 .left-toolbar {
-    width: 300px;
+    width: 350px;
     height: 100%;
     background-color: #070707f5;
     backdrop-filter: blur(2px);
@@ -70,12 +70,20 @@ body, html {
     overflow: hidden;
     transition: width 0.3s ease;
     cursor: url('images/icons/cursors/custom-cursor.png'), default;
+    overflow-y: auto;
+
+    /* Hide the scrollbar */
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .left-toolbar-content {
     display: block;
     padding: 15px;
     width: 300px;
+    overflow-y:scroll;
+    max-height: calc(100vh - 30px);
 }
 
 .left-toolbar.collapsed {
@@ -107,10 +115,10 @@ body, html {
 .location-label {
     background: none;
     border: none;
-    color: #b3b3b3;
+    color: rgb(26, 213, 132);
     font-size: 16px;
     font-family: 'plasma-demibold-condensed', sans-serif;
-    text-shadow: -.5px -.5px 0 #4e4e4e, .5px -.5px 0 #4e4e4e, -.5px .5px 0 #4e4e4e, .5px .5px 0 #4e4e4e;
+    text-shadow: -.5px -.5px 0 rgb(4, 53, 32), .5px -.5px 0 rgb(4, 53, 32), -.5px .5px 0 rgb(4, 53, 32), .5px .5px 0 rgb(4, 53, 32);
     text-align: center;
     padding: 0px;
     margin: 0px;
@@ -171,6 +179,7 @@ body, html {
     font-family: 'plasma-bold-condensed', sans-serif;
 }
 
+/* cursor: url('images/icons/cursors/crosshair.png') 16 16, auto; */
 #map {
     cursor: url('images/icons/cursors/custom-cursor.png'), auto;
     background-color: rgba(0, 0, 0, 0);
@@ -221,7 +230,7 @@ body, html {
     display: inline-block;
     width: 80px;
     height: 30px;
-    margin: 10px;
+    margin: 0;
 }
 
 .switch input {
