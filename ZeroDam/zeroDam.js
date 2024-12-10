@@ -1,9 +1,11 @@
 
 
 var groups = {
-    'allGroups': [categoriesData[0], categoriesData[1], categoriesData[2], categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], categoriesData[28]],
-    'containerGroup': [categoriesData[0], categoriesData[1], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], categoriesData[28]], 
-    'extractGroup': [categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7]]
+    'allGroups': [categoriesData[0], categoriesData[1], categoriesData[2], categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], categoriesData[28], 
+    categoriesData[29], categoriesData[30], categoriesData[31], categoriesData[32], categoriesData[33]],
+    'containerGroup': [categoriesData[0], categoriesData[1], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], 
+    categoriesData[28], categoriesData[30], categoriesData[31], categoriesData[32]], 
+    'extractGroup': [categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7], categoriesData[29]]
 }
 
 // Group toggle functionality
@@ -272,7 +274,7 @@ function createIcon(size, iconUrl) {
 var categoryLayers = {
     'Safe': L.layerGroup().addTo(map),
     'Computer': L.layerGroup().addTo(map),
-    'Saeed': L.layerGroup().addTo(map), 
+    'Boss': L.layerGroup().addTo(map), 
     'Paid Extract': L.layerGroup().addTo(map),
     'Industrial Elevator': L.layerGroup().addTo(map), 
     'Random Extract': L.layerGroup().addTo(map), 
@@ -299,6 +301,11 @@ var categoryLayers = {
     'Bird Nest': L.layerGroup().addTo(map),
     'Stash': L.layerGroup().addTo(map),
     'Suitcase': L.layerGroup().addTo(map),
+    'Spawn': L.layerGroup().addTo(map),
+    'Server': L.layerGroup().addTo(map),
+    'Weapon Crate': L.layerGroup().addTo(map),
+    'Cement Truck': L.layerGroup().addTo(map),
+    'Keycard Door': L.layerGroup().addTo(map),
 };
 
 // CREATE MARKERS ---------------------------------------------
@@ -369,7 +376,7 @@ function createMarkers() {
                     ${iconsHtml}
                     <span style="margin-left: 4px;">${markerData.tooltipText}</span>
                 </div>
-            `;//Change back to this for troubleshooting: <span style="margin-left: 4px; font-family: Arial;">${markerData.tooltipText + " [" + markerData.coordinates + "]"}</span>
+            `;//<span style="margin-left: 4px;">${markerData.tooltipText}</span>        <span style="margin-left: 4px; font-family: Arial;">${markerData.tooltipText + " [" + markerData.coordinates + "]"}</span>
         }
         const tooltipHtml = createTooltipHtml(markerData);
 

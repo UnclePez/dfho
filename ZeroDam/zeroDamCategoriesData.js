@@ -1,7 +1,7 @@
 const categoriesData = [
     { checkboxId: 'safe', layerName: 'Safe' },
     { checkboxId: 'computer', layerName: 'Computer' },
-    { checkboxId: 'saeed', layerName: 'Saeed' },
+    { checkboxId: 'boss', layerName: 'Boss' },
     { checkboxId: 'paidExtract', layerName: 'Paid Extract' },
     { checkboxId: 'industrialElevator', layerName: 'Industrial Elevator' },
     { checkboxId: 'randomExtract', layerName: 'Random Extract' },
@@ -28,5 +28,10 @@ const categoriesData = [
     { checkboxId: 'birdNest', layerName: 'Bird Nest' },
     { checkboxId: 'stash', layerName: 'Stash' },
     { checkboxId: 'suitcase', layerName: 'Suitcase' },
+    { checkboxId: 'spawn', layerName: 'Spawn' },
+    { checkboxId: 'server', layerName: 'Server' },
+    { checkboxId: 'weaponCrate', layerName: 'Weapon Crate' },
+    { checkboxId: 'cementTruck', layerName: 'Cement Truck' },
+    { checkboxId: 'keycardDoor', layerName: 'Keycard Door' },
     // Add more categories here
 ];

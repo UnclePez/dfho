@@ -59,17 +59,28 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: black; padding: 10px; margin-top: 16px;">
                     <div style="display: flex;">
-                        <p style="font-size:large; margin: 0px;">Extracts</p>
+                        <p style="font-size:large; margin: 0px;">Extracts & Spawns</p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="extractGroup">
                         <div class="slider"><div class="slider-toggle"></div></div>
                     </label>
                 </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/spawn-point-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Spawns</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="spawn">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/paid-extract-icon.png" style="width: 32px; height: 32px;"/>
+                        <img src="../images/icons/paid-extract-icon.webp" style="width: 32px; height: 32px;"/>
                         <p style="font-size:large; margin: 0px; margin-left: 10px;">Paid Extracts</p>
                     </div>
                     <label class="switch">
@@ -80,7 +91,7 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/industrial-extract-icon.png" style="width: 32px; height: 32px;"/>
+                        <img src="../images/icons/industrial-extract-icon.webp" style="width: 32px; height: 32px;"/>
                         <p style="font-size:large; margin: 0px; margin-left: 10px;">Industrial Elevator</p>
                     </div>
                     <label class="switch">
@@ -91,7 +102,7 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/random-extract-icon.png" style="width: 32px; height: 32px;"/>
+                        <img src="../images/icons/random-extract-icon.webp" style="width: 32px; height: 32px;"/>
                         <p style="font-size:large; margin: 0px; margin-left: 10px;">Random Extracts</p>
                     </div>
                     <label class="switch">
@@ -102,7 +113,7 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/conditional-extract-icon.png" style="width: 32px; height: 32px;"/>
+                        <img src="../images/icons/conditional-extract-icon.webp" style="width: 32px; height: 32px;"/>
                         <p style="font-size:large; margin: 0px; margin-left: 10px;">Conditional Extracts</p>
                     </div>
                     <label class="switch">
@@ -113,7 +124,7 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/extract-icon.png" style="width: 32px; height: 32px;"/>
+                        <img src="../images/icons/extract-icon.webp" style="width: 32px; height: 32px;"/>
                         <p style="font-size:large; margin: 0px; margin-left: 10px;">Normal Extracts</p>
                     </div>
                     <label class="switch">
@@ -134,8 +145,8 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/containers/safe-icon.png" style="width: 32px; height: 32px;"/>
-                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Safes</p>
+                        <img src="../images/icons/containers/safe-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Safe Spawns</p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="safe">
@@ -146,10 +157,21 @@
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
                         <img src="../images/icons/containers/computer-icon.webp" style="width: 32px; height: 32px;"/>
-                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Computers</p>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Computer Spawns</p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="computer">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/server-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Servers</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="server">
                         <div class="slider"><div class="slider-toggle"></div></div>
                     </label>
                 </div>
@@ -169,10 +191,21 @@
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
                         <img src="../images/icons/containers/small-safebox-icon.webp" style="width: 32px; height: 32px;" />
-                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Small Safe Boxes</p>
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Small Safeboxes</p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="smallSafebox">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/weapon-crate-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Weapon Crates</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="weaponCrate">
                         <div class="slider"><div class="slider-toggle"></div></div>
                     </label>
                 </div>
@@ -385,19 +418,42 @@
                         <div class="slider"><div class="slider-toggle"></div></div>
                     </label>
                 </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/cement-truck-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Cement Trucks</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="cementTruck">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
 
                 <h3>Extras</h3>
                 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/boss-icon.png" style="width: 32px; height: 32px;" />
-                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Bosses</p>
+                        <img src="../images/icons/keycard-door-icon-orange.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Keycard Doors</p>
                     </div>
                     <label class="switch">
-                        <input type="checkbox" id="saeed">
+                        <input type="checkbox" id="keycardDoor">
                         <div class="slider"><div class="slider-toggle"></div></div>
                     </label>
                 </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/boss-icon-red.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Bosses</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="boss">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
 
             </div>
         </div>
