@@ -1,17 +1,17 @@
 var locationsData = [
     {
-        coordinates: [2800, 1866], // find coordinates in Gimp, make sure map dimensions are the same
-        text: 'Major Substation', // Label text
-        zoomLevel: -3 // At what zoom level the text will appear
+        coordinates: [2795, 1891],
+        text: 'Major Substation',
+        zoomLevel: -3
     },
     {
-        coordinates: [3430, 2432],
+        coordinates: [3439, 2457],
         text: 'Visitor Center',
         zoomLevel: -3
     },
     {
         coordinates: [2610, 1258],
-        text: 'Administrative Area',
+        text: 'Administrative Center',
         zoomLevel: -3
     },
     {
@@ -40,6 +40,11 @@ var locationsData = [
         zoomLevel: 0
     },
     {
+        coordinates: [1396, 1080],
+        text: 'Pipeline',
+        zoomLevel: 0
+    },
+    {
         coordinates: [2531, 1223],
         text: 'West Wing',
         zoomLevel: 0
@@ -50,7 +55,7 @@ var locationsData = [
         zoomLevel: 0
     },
     {
-        coordinates: [2777, 1846],
+        coordinates: [2782, 1829],
         text: 'External Facility',
         zoomLevel: 0
     },
@@ -80,8 +85,18 @@ var locationsData = [
         zoomLevel: 0
     },
     {
-        coordinates: [3436, 2469],
-        text: 'Main Visitor Building',
+        coordinates: [2744, 911],
+        text: 'Zero Dam Interior',
+        zoomLevel: 0
+    },
+    {
+        coordinates: [2881, 796],
+        text: 'Vault',
+        zoomLevel: 0
+    },
+    {
+        coordinates: [2967, 1419],
+        text: 'Parking Lot',
         zoomLevel: 0
     },
     // Add more location names here
