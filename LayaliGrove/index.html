@@ -45,11 +45,420 @@
                     </div>
                 </div>
 
-                <h2>WIP</h2>
+                <h1>Marker Controls (work in progress)</h1>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: black; padding: 10px;">
+                    <div style="display: flex;">
+                        <p style="font-size:x-large; margin: 0px;">All Markers</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="allGroups">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: black; padding: 10px; margin-top: 16px;">
+                    <div style="display: flex;">
+                        <p style="font-size:large; margin: 0px;">Extracts & Spawns</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="extractGroup">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/spawn-point-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Spawns</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="spawn">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/paid-extract-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Paid Extracts</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="paidExtract">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/industrial-extract-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Train Extract</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="trainExtract">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/random-extract-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Random Extracts</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="randomExtract">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/extract-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Normal Extracts</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="normalExtract">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: black; padding: 10px; margin-top: 16px;">
+                    <div style="display: flex;">
+                        <p style="font-size:large; margin: 0px;">Containers</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="containerGroup">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/safe-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Safe Spawns</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="safe">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/computer-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Computer Spawns</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="computer">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/server-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Servers</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="server">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/travel-bag-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Travel Bags</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="travelBag">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/small-safebox-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Small Safeboxes</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="smallSafebox">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/weapon-crate-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Weapon Crates</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="weaponCrate">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/computer-case-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Computer Cases</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="computerCase">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/large-weapon-crate-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Large Weapon Crate</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="lgWeaponCrate">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/ammo-crate-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Ammo Crates</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="ammoCrate">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/tool-cabinet-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Tool Cabinets</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toolCabinet">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/large-toolbox-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Large Toolboxes</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="lgToolBox">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/lab-coat-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Lab Coats</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="labCoat">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/clothing-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Clothing</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="clothing">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/military-med-kit-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Military Medkits</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="militaryMedkit">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/pile-of-medical-supplies-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Medical Piles</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="medicalPile">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/briefcase-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Briefcases</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="briefcase">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/premium-storage-box-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Premium Storage</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="premiumStorage">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/drawer-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Drawers</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="drawers">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/courier-carton-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Courier Cartons</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="courierCarton">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/flight-case-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Flight Cases</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="flightCase">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/dumpster-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Dumpsters</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="dumpster">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/field-supply-box-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Field Supply Boxes</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="fieldSupply">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/bird-nest-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Bird Nests</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="birdNest">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/hidden-stash-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Stashes</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="stash">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/suitcase-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Suitcases</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="suitcase">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/cement-truck-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Cement Trucks</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="cementTruck">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <h3>Extras</h3>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/keycard-door-icon-orange.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Keycard Doors</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="keycardDoor">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/boss-icon-red.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Bosses</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="boss">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/secret-crate-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Secret Crates</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="secretCrate">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+
             </div>
         </div>
         <button id="openLeftToolbarBtn" class="open-left-toolbar-btn">☰</button>
     </div>
+            </div>
 
     <div id="main-content" class="main-content">
         <div id="map"></div>

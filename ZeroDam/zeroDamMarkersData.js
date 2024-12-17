@@ -2804,7 +2804,7 @@ const markersData = [
         category: 'Keycard Door',
         coordinates: [2747, 1288],
         iconUrl: '../images/icons/keycard-door-icon-orange.webp',
-        tooltipText: 'KEYCARD DOOR',
+        tooltipText: 'Equipment Collection Room',
         popupText: 'Equipment Collection Room',
         height: '',
         locked: true,
