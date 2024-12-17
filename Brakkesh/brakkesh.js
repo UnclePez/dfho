@@ -2,10 +2,10 @@
 
 var groups = {
     'allGroups': [categoriesData[0], categoriesData[1], categoriesData[2], categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], categoriesData[28], 
-    categoriesData[29], categoriesData[30], categoriesData[31], categoriesData[32], categoriesData[33], categoriesData[34]],
-    'containerGroup': [categoriesData[0], categoriesData[1], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], 
-    categoriesData[28], categoriesData[30], categoriesData[31], categoriesData[32]], 
-    'extractGroup': [categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7], categoriesData[29]]
+    categoriesData[29], categoriesData[30], categoriesData[31], categoriesData[32], categoriesData[33],],
+    'containerGroup': [categoriesData[0], categoriesData[1], categoriesData[7], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], 
+    categoriesData[27], categoriesData[29], categoriesData[30], categoriesData[31]], 
+    'extractGroup': [categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[28]]
 }
 
 // Group toggle functionality
@@ -21,12 +21,7 @@ function setupGroupControl (groups) {
                 if (groupName === 'allGroups') {
                     Object.keys(groups).forEach((groupName) => {
                         document.getElementById(groupName).checked = true;
-                        dashedLineLayer.addTo(map);
                     });
-                }
-
-                if (groupName === 'extractGroup') {
-                    dashedLineLayer.addTo(map);
                 }
 
                 groups[groupName].forEach (({ checkboxId, layerName }) => {  //for each category
@@ -38,12 +33,7 @@ function setupGroupControl (groups) {
                 if (groupName === 'allGroups') {
                     Object.keys(groups).forEach((groupName) => {
                         document.getElementById(groupName).checked = false;
-                        map.removeLayer(dashedLineLayer);
                     });
-                }
-
-                if (groupName === 'extractGroup') {
-                    map.removeLayer(dashedLineLayer);
                 }
 
                 // Check every group. If all group checkboxes are closed, close the allGroups checkbox
@@ -79,10 +69,6 @@ function setupLayerControl(categories) {
             if (this.checked) { // if switched on
                 categoryLayers[layerName].addTo(map); // Turn on markers connected to checkbox (layerName = category)
 
-                if (layerName === 'Industrial Elevator') {
-                    dashedLineLayer.addTo(map);
-                }
-
                 // Iterate over the keys of the groups object
                 for (const groupKey in groups) {
                     if (groups.hasOwnProperty(groupKey)) { // Check if the property belongs to the object itself
@@ -96,10 +82,6 @@ function setupLayerControl(categories) {
                 
             } else { // if switched off
                 map.removeLayer(categoryLayers[layerName]); // Turn off markers
-
-                if (layerName === 'Industrial Elevator') {
-                    map.removeLayer(dashedLineLayer);
-                }
 
                 // Iterate over the keys of the groups object
                 for (const groupKey in groups) {
@@ -134,16 +116,8 @@ function initializeLayerControls(controlMappings) {
         const checkbox = document.getElementById(checkboxId);
         if (checkbox.checked) {
             categoryLayers[layerName].addTo(map);
-
-            if (layerName === 'Industrial Elevator') {
-                dashedLineLayer.addTo(map);
-            }
         } else {
             map.removeLayer(categoryLayers[layerName]);
-
-            if (layerName === 'Industrial Elevator') {
-                map.removeLayer(dashedLineLayer);
-            }
         }
     });
 }
@@ -172,10 +146,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle toggling left toolbar with button
 
-    const bottomToolbar = document.getElementById('leftToolbar');
+    const leftToolbar = document.getElementById('leftToolbar');
     const openToolbarBtn = document.getElementById('openLeftToolbarBtn');
     openToolbarBtn.addEventListener('click', () => {
-        bottomToolbar.classList.toggle('collapsed');
+        leftToolbar.classList.toggle('collapsed');
     });
 
     // Setup layer controls
@@ -202,7 +176,7 @@ var map = L.map('map', {
     zoomControl: false
 });
 var bounds = [[0,0], [4800, 4800]];
-var image = L.imageOverlay('../images/zeroDamHD.webp', bounds).addTo(map);
+var image = L.imageOverlay('../images/brakkeshHD.webp', bounds).addTo(map);
 map.fitBounds(bounds);
 map.setZoom(-2);
 
@@ -276,9 +250,8 @@ var categoryLayers = {
     'Computer': L.layerGroup().addTo(map),
     'Boss': L.layerGroup().addTo(map), 
     'Paid Extract': L.layerGroup().addTo(map),
-    'Industrial Elevator': L.layerGroup().addTo(map), 
+    'Train Extract': L.layerGroup().addTo(map), 
     'Random Extract': L.layerGroup().addTo(map), 
-    'Conditional Extract': L.layerGroup().addTo(map), 
     'Normal Extract': L.layerGroup().addTo(map),
     'Travel Bag': L.layerGroup().addTo(map),
     'Small Safebox': L.layerGroup().addTo(map),
@@ -313,32 +286,6 @@ var categoryLayers = {
 //var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 var markers = [];
 globalIconSize = 32;
-
-var dashedLineLayer = L.layerGroup().addTo(map);
-
-function createDashedLines() {
-    // Define coordinates for the dashed line
-    var point1 = [2971, 946];
-    var point2 = [2530, 1187];
-    var point3 = [2953, 1723];
-
-    var point1Coords = [bounds[1][0] - point1[1], point1[0]];
-    var point2Coords = [bounds[1][0] - point2[1], point2[0]];
-    var point3Coords = [bounds[1][0] - point3[1], point3[0]];
-
-    // Define polyline options for dashed line style
-    var dashedLineOptions = {
-        color: 'white', // Line color
-        weight: 1,     // Line weight
-        dashArray: '8, 8' // Dashed line pattern (8px dashes and 8px gaps)
-    };
-
-    // Create polylines with the dashed line style and add them to the layer group
-    L.polyline([point1Coords, point2Coords], dashedLineOptions).addTo(dashedLineLayer);
-    L.polyline([point1Coords, point3Coords], dashedLineOptions).addTo(dashedLineLayer);
-}
-
-createDashedLines();
 
 function createMarkers() {
     markersData.forEach(function(markerData) {

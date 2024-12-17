@@ -1,5 +1,4 @@
 const markersData = [
-
     // {//Computer
     //     category: 'Computer', // For marker toggle functionality. Should be a category in categoriesData.js
     //     coordinates: [2379, 1375], // Raw pixel coordinates found by hovering over map image in programs like Gimp or Photoshop
@@ -331,7 +330,7 @@ const markersData = [
     
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [1969, 3407],
+        coordinates: [1547, 1433],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',
@@ -340,7 +339,7 @@ const markersData = [
     },
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [1397, 2113],
+        coordinates: [1782, 1735],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',
@@ -349,7 +348,7 @@ const markersData = [
     },
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [1394, 1453],
+        coordinates: [1837, 2125],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',
@@ -358,7 +357,7 @@ const markersData = [
     },
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [3221, 2455],
+        coordinates: [2563, 1813],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',
@@ -367,7 +366,7 @@ const markersData = [
     },
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [3487, 1921],
+        coordinates: [2618, 1331],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',
@@ -376,7 +375,7 @@ const markersData = [
     },
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [3125, 1156],
+        coordinates: [2959, 1453],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',
@@ -385,7 +384,7 @@ const markersData = [
     },
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [2254, 1192],
+        coordinates: [2950, 1960],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',
@@ -394,7 +393,34 @@ const markersData = [
     },
     {//Player Spawn
         category: 'Spawn',
-        coordinates: [2784, 1634],
+        coordinates: [2807, 2497],
+        iconUrl: '../images/icons/spawn-point-icon.webp',
+        tooltipText: 'SPAWN',
+        popupText: 'Player Spawn',
+        height: '',
+        locked: false,
+    },
+    {//Player Spawn
+        category: 'Spawn',
+        coordinates: [2285, 2619],
+        iconUrl: '../images/icons/spawn-point-icon.webp',
+        tooltipText: 'SPAWN',
+        popupText: 'Player Spawn',
+        height: '',
+        locked: false,
+    },
+    {//Player Spawn
+        category: 'Spawn',
+        coordinates: [2114, 3185],
+        iconUrl: '../images/icons/spawn-point-icon.webp',
+        tooltipText: 'SPAWN',
+        popupText: 'Player Spawn',
+        height: '',
+        locked: false,
+    },
+    {//Player Spawn
+        category: 'Spawn',
+        coordinates: [2846, 3179],
         iconUrl: '../images/icons/spawn-point-icon.webp',
         tooltipText: 'SPAWN',
         popupText: 'Player Spawn',

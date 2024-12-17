@@ -25,9 +25,9 @@ const markersData = [
     },
     {
         coordinates: [1797, 1509], 
-        iconUrl: '../images/icons/temp-icon.png', 
+        iconUrl: '../images/icons/zero-dam-icon.png', 
         tooltipText: 'Brakkesh', 
-        url: '#'
+        url: '../Brakkesh/'
     },
     {
         coordinates: [3066, 1524], 

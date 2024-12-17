@@ -179,7 +179,7 @@ body, html {
     font-family: 'plasma-bold-condensed', sans-serif;
 }
 
-/* cursor:  url('images/icons/cursors/custom-cursor.png'), auto;       cursor: url('images/icons/cursors/crosshair.png') 16 16, auto;*/
+/* cursor:  url('images/icons/cursors/custom-cursor.png'), auto;       cursor: url('images/icons/cursors/crosshair.png') 16 16, auto;  */
 #map {
     cursor:  url('images/icons/cursors/custom-cursor.png'), auto;
     background-color: rgba(0, 0, 0, 0);
