@@ -2851,7 +2851,7 @@ const markersData = [
         iconUrl: '../images/icons/keycard-door-icon-orange.webp',
         tooltipText: 'Substation Dormitory',
         popupText: 'Substation Dormitory',
-        height: '',
+        height: 'up',
         locked: true,
     },
 

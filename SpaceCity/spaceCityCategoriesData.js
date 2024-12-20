@@ -32,6 +32,8 @@ const categoriesData = [
     { checkboxId: 'weaponCrate', layerName: 'Weapon Crate' },
     { checkboxId: 'cementTruck', layerName: 'Cement Truck' },
     { checkboxId: 'keycardDoor', layerName: 'Keycard Door' },
-    { checkboxId: 'secretCrate', layerName: 'Secret Crate' },
+    { checkboxId: 'secretCrate', layerName: 'Secret Crate' }, 
+    { checkboxId: 'computerBag', layerName: 'Computer Bag' },
+    { checkboxId: 'climbingBag', layerName: 'Climbing Bag' },
     // Add more categories here
 ];

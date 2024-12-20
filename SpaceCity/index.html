@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <h1>Marker Controls (work in progress)</h1>
+                <h1>Marker Controls</h1> 
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: black; padding: 10px;">
                     <div style="display: flex;">
@@ -81,8 +81,8 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/paid-extract-icon.webp" style="width: 32px; height: 32px;"/>
-                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Paid Extracts</p>
+                        <img src="../images/icons/industrial-extract-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Rocket Extract</p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="paidExtract">
@@ -92,19 +92,8 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/industrial-extract-icon.webp" style="width: 32px; height: 32px;"/>
-                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Train Extract</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" id="trainExtract">
-                        <div class="slider"><div class="slider-toggle"></div></div>
-                    </label>
-                </div>
-
-                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
-                    <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/random-extract-icon.webp" style="width: 32px; height: 32px;"/>
-                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Random Extracts</p>
+                        <img src="../images/icons/conditional-extract-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Helicopter Extract</p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="randomExtract">
@@ -114,14 +103,16 @@
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
                     <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/extract-icon.webp" style="width: 32px; height: 32px;"/>
-                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Normal Extracts</p>
+                        <img src="../images/icons/conditional-extract-icon.webp" style="width: 32px; height: 32px;"/>
+                        <p style="font-size:large; margin: 0px; margin-left: 10px;">Packet Loss Extract</p>
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="normalExtract">
                         <div class="slider"><div class="slider-toggle"></div></div>
                     </label>
                 </div>
+
+                <input type="checkbox" id="trainExtract" style="visibility: hidden; max-height: 0;">
 
                 <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: black; padding: 10px; margin-top: 16px;">
                     <div style="display: flex;">
@@ -185,6 +176,28 @@
                     </div>
                     <label class="switch">
                         <input type="checkbox" id="smallSafebox">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/premium-storage-box-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Computer Bags</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="computerBag">
+                        <div class="slider"><div class="slider-toggle"></div></div>
+                    </label>
+                </div>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
+                    <div style="display: flex; align-items: center; padding-left: 8px;">
+                        <img src="../images/icons/containers/premium-storage-box-icon.webp" style="width: 32px; height: 32px;" />
+                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Climbing Bags</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="climbingBag">
                         <div class="slider"><div class="slider-toggle"></div></div>
                     </label>
                 </div>
@@ -409,16 +422,7 @@
                     </label>
                 </div>
                 
-                <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; background-color: rgb(14, 14, 14); margin: 6px;">
-                    <div style="display: flex; align-items: center; padding-left: 8px;">
-                        <img src="../images/icons/containers/cement-truck-icon.webp" style="width: 32px; height: 32px;" />
-                        <p style="font-size: large; margin: 0px; margin-left: 10px;">Cement Trucks</p>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" id="cementTruck">
-                        <div class="slider"><div class="slider-toggle"></div></div>
-                    </label>
-                </div>
+                <input type="checkbox" id="cementTruck" style="visibility: hidden; max-height: 0;">
 
                 <h3>Extras</h3>
                 

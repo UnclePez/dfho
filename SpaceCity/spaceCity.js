@@ -2,9 +2,9 @@
 
 var groups = {
     'allGroups': [categoriesData[0], categoriesData[1], categoriesData[2], categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[7], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], categoriesData[28], 
-    categoriesData[29], categoriesData[30], categoriesData[31], categoriesData[32], categoriesData[33],],
+    categoriesData[29], categoriesData[30], categoriesData[31], categoriesData[32], categoriesData[33], categoriesData[34], categoriesData[35]],
     'containerGroup': [categoriesData[0], categoriesData[1], categoriesData[7], categoriesData[8], categoriesData[9], categoriesData[10], categoriesData[11], categoriesData[12], categoriesData[13], categoriesData[14], categoriesData[15], categoriesData[16], categoriesData[17], categoriesData[18], categoriesData[19], categoriesData[20], categoriesData[21], categoriesData[22], categoriesData[23], categoriesData[24], categoriesData[25], categoriesData[26], categoriesData[27], 
-    categoriesData[27], categoriesData[29], categoriesData[30], categoriesData[31]], 
+    categoriesData[27], categoriesData[29], categoriesData[30], categoriesData[31], categoriesData[34], categoriesData[35]], 
     'extractGroup': [categoriesData[3], categoriesData[4], categoriesData[5], categoriesData[6], categoriesData[28]]
 }
 
@@ -280,6 +280,8 @@ var categoryLayers = {
     'Cement Truck': L.layerGroup().addTo(map),
     'Keycard Door': L.layerGroup().addTo(map),
     'Secret Crate': L.layerGroup().addTo(map),
+    'Computer Bag': L.layerGroup().addTo(map),
+    'Climbing Bag': L.layerGroup().addTo(map),
 };
 
 // CREATE MARKERS ---------------------------------------------
