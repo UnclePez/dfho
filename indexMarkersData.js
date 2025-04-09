@@ -38,7 +38,7 @@ const markersData = [
     {
         coordinates: [3126, 813], 
         iconUrl: '../images/icons/temp-icon.png', 
-        tooltipText: 'Rattlesnake', 
+        tooltipText: 'Operation Serpentine', 
         url: '#'
     },
 ];

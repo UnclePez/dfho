@@ -27,6 +27,42 @@
   gtag('config', 'G-50J5M26YZP');
 </script>
 
+<style>
+    .support-feedback-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .support-btn, .feedback-btn {
+        padding: 10px 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.2s ease;
+    }
+
+    .support-btn {
+        background-color: #ffc107;
+    }
+
+    .support-btn:hover {
+        background-color: #e0a800;
+    }
+
+    .feedback-btn {
+        background-color: #17a2b8;
+        color: white;
+    }
+
+    .feedback-btn:hover {
+        background-color: #117a8b;
+    }
+</style>
+
 <body>
     <div class="background-image"></div>
 
@@ -34,6 +70,21 @@
         <div id="leftToolbar" class="left-toolbar">
             <div class="left-toolbar-content">
 
+                <div class="support-feedback-container">
+                    <button 
+                        onclick="window.open('https://ko-fi.com/unclepez', '_blank')" 
+                        class="support-btn">
+                        ☕ Support Me
+                    </button>
+                
+                    <button 
+                        onclick="window.open('https://forms.gle/3BXg6HtJUzUrp2TW9', '_blank')" 
+                        class="feedback-btn">
+                        💬 Give Feedback
+                    </button>
+                </div>
+                <br/>
+                
                 <div style="display: flex; align-items: center;">
                     <a href="../index.html"><img src="../images/icons/home-icon.png" style="width:30px; height:30px; padding-right: 10px; padding-top: 2px;"></a>
                     <div class="map-dropdown">
