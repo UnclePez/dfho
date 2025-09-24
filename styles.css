@@ -83,7 +83,8 @@ body, html {
     padding: 15px;
     width: 300px;
     overflow-y:scroll;
-    max-height: calc(100vh - 30px);
+    max-height: calc(100vh - 30px - 272px);
+    padding-bottom: 0;
 }
 
 .left-toolbar.collapsed {
@@ -295,4 +296,35 @@ input:checked + .slider .slider-toggle {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(38px);
+}
+
+/* Fixed Bottom Section */
+.left-toolbar-bottom-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 272px;
+    background-color: #070707f5;
+    backdrop-filter: blur(2px);
+    border-top: 1px solid rgb(53, 53, 53);
+    z-index: 10;
+}
+
+.bottom-section-content {
+    padding: 15px;
+    color: white;
+    height: calc(272px - 30px);
+    overflow-y: auto;
+}
+
+.bottom-section-content h3 {
+    margin-top: 0;
+    color: rgb(26, 213, 132);
+    font-family: 'plasma-demibold-condensed', sans-serif;
+}
+
+.bottom-section-content p {
+    font-family: 'saira-semicondensed-regular', sans-serif;
+    line-height: 1.4;
 }
